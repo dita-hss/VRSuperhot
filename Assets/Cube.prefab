@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -969234770599070296}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,3 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1041cb09137fa459e9bc42bc53e74409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpeed: -30
+  maxSpeed: 30
+  plane: {fileID: 939817773569781909, guid: 0dff40d52f71247a8ae4553e6081f08e, type: 3}

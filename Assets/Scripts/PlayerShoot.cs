@@ -30,7 +30,7 @@ public class PlayerShoot : MonoBehaviour
         // this line adds a force to the bullet object
         // bullet.GetComponent<Rigidbody>().AddForce(transform.forward * shootPower);
         // bullet.GetComponent<Rigidbody>().AddForce(transform.up * shootPower);
-        
+
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         var vc = rb.velocity;
         vc.z = 0;

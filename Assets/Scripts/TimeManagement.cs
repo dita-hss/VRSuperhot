@@ -12,10 +12,11 @@ public class TimeManage : MonoBehaviour
     private Vector3 previousHandPosition;
 
 
-    //test and trial showed the vr simulation to have speeds between 0 and ~100 
-    //have to move super fast to reach numbers around 100 -- looks to have good movement with 60f
-    public float maxSpeed = 40f;
-    public float minSpeed = 0f;
+    //test and trial showed the vr simulation to have speeds between 2 and ~10
+    //have to move super fast to reach numbers around 50 -- 
+    // movement still looks iffy with 10f-- maybe the function itself should be updated instead of these numbers. 
+    public float maxSpeed = 10f;
+    public float minSpeed = 2f;
 
 
     void Start()
@@ -42,7 +43,7 @@ public class TimeManage : MonoBehaviour
         float normalizedSpeed = (speed - minSpeed) / (maxSpeed - minSpeed);
         // normalized speed debug
             //Debug.Log("normalizedSpeed" + normalizedSpeed);
-        if (normalizedSpeed < 0) normalizedSpeed = 0.01f;
+        if (normalizedSpeed < 0) normalizedSpeed = 0.001f;
         if (normalizedSpeed > 1) normalizedSpeed = 1;
 
         Time.timeScale = normalizedSpeed;
