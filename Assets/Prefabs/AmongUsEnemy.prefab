@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: -4276162148226836595}
   - component: {fileID: 7838045398338691029}
   m_Layer: 3
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: AmongUsEnemy
+  m_TagString: AmongUsEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3125a3fe288840a98d241bc76d4a2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
 --- !u!135 &7838045398338691029
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -130,11 +130,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbf2178353ee241b09faa918eaae52c6, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: AmongUsEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 3447017247091467002, guid: fbf2178353ee241b09faa918eaae52c6, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447017247091467002, guid: fbf2178353ee241b09faa918eaae52c6, type: 3}
+      propertyPath: m_TagString
+      value: AmongUsEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

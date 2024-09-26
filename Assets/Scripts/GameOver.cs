@@ -7,8 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Game Over");
-		string currentSceneName = SceneManager.GetActiveScene().name;
-	    SceneManager.LoadScene(currentSceneName);
+            //Debug.Log("Game Over");
+        // if it collides w the enemy, restart the game
+        if (other.gameObject.CompareTag("AmongUsEnemy") || other.gameObject.CompareTag("BlackAmongUsEnemy") || other.gameObject.CompareTag("CubeEnemy")) {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+	        SceneManager.LoadScene(currentSceneName);
+        }
+		
     }
 }

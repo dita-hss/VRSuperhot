@@ -13,7 +13,13 @@ public class EnemyAI : MonoBehaviour
 
     // When the player enters the trigger, assign it as a target
     private void OnTriggerEnter(Collider other) {
-        playerTarget = other.gameObject;
+
+        if (other.gameObject.layer == 7 || other.gameObject.CompareTag("Player")) {
+                //Debug.Log("Enemy sees player");
+            playerTarget = other.gameObject;
+        }
+
+        //playerTarget = other.gameObject;
     }
 
     // Update is called once per frame
@@ -23,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         if (playerTarget != null) {
             transform.LookAt(playerTarget.transform.position);
             transform.position += transform.forward * Time.deltaTime * speed;
-        }
+        } 
     }
 
     
