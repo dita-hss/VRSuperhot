@@ -1413,7 +1413,9 @@ MonoBehaviour:
   CubeTemplate: {fileID: 9003202740595740373, guid: c89ea7d54277e4eefa2beace94322eb0, type: 3}
   AmongUsTemplate: {fileID: 8733968373503796591, guid: 005aadeca94714308a260677a1d619ca, type: 3}
   blackAmongUsTemplate: {fileID: 1698803498}
-  maxEnemies: 10
+  maxEnemiesCubes: 7
+  maxEnemiesRed: 7
+  maxEnemiesBlack: 7
   plane: {fileID: 4530332}
 --- !u!4 &655349398
 Transform:
@@ -3140,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669142038201220540, guid: 40e55a7b4be904837a2433dd83c5a998, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3457,6 +3459,7 @@ PrefabInstance:
       value: AmongUsEnemyAdvanced
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
