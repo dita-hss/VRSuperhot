@@ -11,6 +11,12 @@ public class EnemyAI : MonoBehaviour
 
     private GameObject playerTarget;
 
+    private float initialYPosition;
+
+    void Start() {
+        initialYPosition = transform.position.y;
+    }
+
     // When the player enters the trigger, assign it as a target
     private void OnTriggerEnter(Collider other) {
 
@@ -23,12 +29,17 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         // Only move forward if there is a player target
         if (playerTarget != null) {
-            transform.LookAt(playerTarget.transform.position);
+
+            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, playerTarget.transform.position.z);
+            transform.LookAt(targetPosition);
             transform.position += transform.forward * Time.deltaTime * speed;
+
+
+            // transform.LookAt(playerTarget.transform.position);
+            // transform.position += transform.forward * Time.deltaTime * speed;
         } 
     }
 

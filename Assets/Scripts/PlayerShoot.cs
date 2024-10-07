@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 
 public class PlayerShoot : MonoBehaviour
@@ -10,7 +11,7 @@ public class PlayerShoot : MonoBehaviour
     public float shootPower = 10000f;
     public InputActionReference trigger;
 
-    public bool automaticFire = false;
+    public AudioClip gunShotSFX;
 
 
     // Start is called before the first frame update
@@ -26,6 +27,8 @@ public class PlayerShoot : MonoBehaviour
         // this line creates a new bullet object and adds it into the world
         //spawn the bullet a bit in front of the player
         GameObject bullet = Instantiate(BulletTemplate, transform.position, transform.rotation);
+        //Debug.Log(GetComponent<AudioSource>());
+        GetComponent<AudioSource>().PlayOneShot(gunShotSFX);
         
         // this line adds a force to the bullet object
         // bullet.GetComponent<Rigidbody>().AddForce(transform.forward * shootPower);
@@ -36,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
         vc.z = 0;
         vc.y = 0;
         rb.velocity = bullet.transform.forward * 40;
-        Destroy(bullet, 0.5f);
+        Destroy(bullet, 0.9f);
 
     }
 

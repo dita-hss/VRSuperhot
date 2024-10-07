@@ -11,9 +11,9 @@ public class SpawnEnemies : MonoBehaviour {
     public GameObject AmongUsTemplate;
     public GameObject blackAmongUsTemplate;
 
-    public int maxEnemiesCubes = 7;
-    public int maxEnemiesRed = 7;
-    public int maxEnemiesBlack = 7;
+    public int maxEnemiesCubes = 3;
+    public int maxEnemiesRed = 3;
+    public int maxEnemiesBlack = 3;
 
     // keeping track of the enemies that are spawned and where they can be spawned
     private List<GameObject> cubeEnemies = new List<GameObject>();
@@ -58,17 +58,17 @@ public class SpawnEnemies : MonoBehaviour {
     }
 
     void SpawnAmongUsEnemy() {
-            Debug.Log("Spawning red among us enemy");
         Vector3 randomPosition = GetRandomPositionOnPlane();
         GameObject newAmongUsEnemy = Instantiate(AmongUsTemplate, randomPosition, transform.rotation);
         amongUsEnemies.Add(newAmongUsEnemy);
+        
     }
 
     void SpawnBlackAmongUsEnemy() {
-            Debug.Log("Spawning black among us enemy");
         Vector3 randomPosition = GetRandomPositionOnPlane();
         GameObject newBlackAmongUsEnemy = Instantiate(blackAmongUsTemplate, randomPosition, transform.rotation);
         blackAmongUsEnemies.Add(newBlackAmongUsEnemy);
+        
     }
 
 
@@ -81,15 +81,16 @@ public class SpawnEnemies : MonoBehaviour {
     public void DestroyAmongUsEnemy(GameObject amongUsEnemy){
         amongUsEnemies.Remove(amongUsEnemy);
         Destroy(amongUsEnemy);
-            Debug.Log(amongUsEnemies.Count);
+            //Debug.Log(amongUsEnemies.Count);
             
     }
 
     public void DestroyBlackAmongUsEnemy(GameObject blackAmongUsEnemy){
         blackAmongUsEnemies.Remove(blackAmongUsEnemy);
         Destroy(blackAmongUsEnemy);
-            Debug.Log(blackAmongUsEnemies.Count);
+            //Debug.Log(blackAmongUsEnemies.Count);
     }
+
 
     Vector3 GetRandomPositionOnPlane() {
         // bounds of the plane on xz plane
@@ -100,7 +101,7 @@ public class SpawnEnemies : MonoBehaviour {
         float randomZ = Random.Range(planeBounds.min.z, planeBounds.max.z);
 
         // so its not inside
-        float yPosition = planeBounds.max.y + 0.1f;
+        float yPosition = planeBounds.max.y;
 
         return new Vector3(randomX, yPosition, randomZ);
     }
