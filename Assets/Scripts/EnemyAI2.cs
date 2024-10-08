@@ -23,7 +23,7 @@ public class EnemyAI2 : MonoBehaviour
     }
     void Update() {
         //look at player and shoot at player
-            // bug: if player is destroyed, enemy will still try to shoot at player
+            // fixed bug: if player is destroyed, enemy will still try to shoot at player
         if (playerTarget != null && this != null && this.gameObject != null && gameObject.activeSelf) {
             transform.LookAt(playerTarget.transform.position);
             float distance = Vector3.Distance(transform.position, playerTarget.transform.position);

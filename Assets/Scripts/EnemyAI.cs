@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update() {
         // Only move forward if there is a player target
+            //n dont move in the y direction "walking effect' sorta ( no animations :( )
         if (playerTarget != null) {
 
             Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, playerTarget.transform.position.z);

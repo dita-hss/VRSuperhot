@@ -10,8 +10,7 @@ public class GameOver : MonoBehaviour
             //Debug.Log("Game Over");
         // if it collides w the enemy, restart the game
         if (other.gameObject.CompareTag("AmongUsEnemy") || other.gameObject.CompareTag("BlackAmongUsEnemy") || other.gameObject.CompareTag("CubeEnemy")) {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-	        SceneManager.LoadScene(currentSceneName);
+            SceneManager.LoadScene("Scenes/GameOverScene");
         }
 		
     }

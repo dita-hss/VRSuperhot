@@ -8,6 +8,7 @@ TagManager:
   - AmongUsEnemy
   - BlackAmongUsEnemy
   - CubeEnemy
+  - GAmongUsEnemy
   layers:
   - Default
   - TransparentFX
